@@ -28,4 +28,10 @@ class TaskViewModel(private val repository: TaskRepository): ViewModel() {
             repository.addTask(task)
         }
     }
+
+    fun addTask(task: Task) {
+        viewModelScope.launch {
+            repository.addTask(task)
+        }
+    }
 }

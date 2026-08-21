@@ -1,19 +1,32 @@
 package com.example.taskmagenerapp.ui.screens
 
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import com.example.taskmagenerapp.viewmodel.TaskViewModel
 import kotlin.collections.emptyList
 
 @Composable
 fun TaskScreen(viewModel: TaskViewModel) {
-    val tasks by viewModel. .tasks.collectAsState(
-        initial = emptyList()
-    )
+    val uiState by viewModel
+        .uiState
+        .collectAsState()
+
     LazyColumn {
-        items(tasks) {
+        items(uiState.tasks) {
             task -> Text(task.title)
         }
     }
+
+//    val tasks by viewModel.tasks.collectAsState(
+//        initial = emptyList()
+//    )
+//    LazyColumn {
+//        items(tasks) {
+//            task -> Text(task.title)
+//        }
+//    }
 }
