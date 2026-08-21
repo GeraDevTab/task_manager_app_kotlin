@@ -8,7 +8,7 @@ import kotlin.collections.emptyList
 
 @Composable
 fun TaskScreen(viewModel: TaskViewModel) {
-    val tasks by viewModel.tasks.collectAsState(
+    val tasks by viewModel. .tasks.collectAsState(
         initial = emptyList()
     )
     LazyColumn {
