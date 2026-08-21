@@ -1,6 +1,7 @@
 package com.example.taskmagenerapp.ui.screens
 
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
@@ -33,5 +34,9 @@ fun TaskList(
 ) {
     LazyColumn(
         modifier = modifier
-    )
+    ) {
+        items(tasks) { task ->
+            TaskItem(task)
+        }
+    }
 }
