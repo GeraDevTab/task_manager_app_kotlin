@@ -1,5 +1,8 @@
 package com.example.taskmagenerapp.data.local
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
 @Entity(tableName = "tasks")
 data class Task(
     @PrimaryKey(autoGenerate = true)
